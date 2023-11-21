@@ -1,5 +1,22 @@
 <html>
+  <head>
+    <title>Modoki</title>
+  </head>
   <body>
-    hola mundo
+    <form action="search.html" method="get" id="search-form">
+      <input type="text" name="q" id="search-input" placeholder="Escribe tu búsqueda">
+        <button type="submit">Buscar Webs</button>
+        <button type="button" onclick="searchImages()">Buscar Imágenes</button>
+    </form>
+
+    <script>
+        function searchImages() {
+            const searchInput = document.getElementById("search-input").value;
+            // Puedes realizar alguna lógica específica para la búsqueda de imágenes aquí
+            // Por ahora, simplemente redirigimos a search.html con el término de búsqueda
+            window.location.href = `search.html?q=${encodeURIComponent(searchInput)}&type=imagen`;
+        }
+    </script>
+
   </body>
 </html>
